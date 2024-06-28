@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://deuqy4il73yu5"
+path="res://.godot/imported/Simple 3.wav-eef1f1e31d1c2d3dd1173de0bf95f58b.sample"
+
+[deps]
+
+source_file="res://resources/assets/audio/alert ringtones/Simple 3.wav"
+dest_files=["res://.godot/imported/Simple 3.wav-eef1f1e31d1c2d3dd1173de0bf95f58b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

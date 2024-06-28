@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgmk68881t8fu"
+path="res://.godot/imported/Simple 1.mp3-f29bc7d7b5fae48f7173bf5b1c84ea5e.mp3str"
+
+[deps]
+
+source_file="res://resources/assets/audio/alert ringtones/Simple 1.mp3"
+dest_files=["res://.godot/imported/Simple 1.mp3-f29bc7d7b5fae48f7173bf5b1c84ea5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
