@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://5vuxm4nyfpq6"]
+[gd_scene load_steps=12 format=3 uid="uid://5vuxm4nyfpq6"]
 
-[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/white_square_background.jpg" id="1_edj84"]
-[ext_resource type="Texture2D" uid="uid://ch7h2kofah466" path="res://resources/assets/textures/profile_picture.png" id="2_c6c26"]
+[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_edj84"]
+[ext_resource type="Texture2D" uid="uid://ch7h2kofah466" path="res://resources/assets/textures/temp/profile_picture.png" id="2_c6c26"]
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="3_5o043"]
 [ext_resource type="Script" path="res://scenes/home_menu/clock.gd" id="4_pla1a"]
 [ext_resource type="Script" path="res://scenes/components/add_scene_button.gd" id="5_fr4tf"]
+[ext_resource type="Texture2D" uid="uid://cutmprmj6fwln" path="res://resources/assets/textures/icons/heart_icon.png" id="5_l62vd"]
 [ext_resource type="PackedScene" uid="uid://cjy4yj8i1il7d" path="res://scenes/settings_menu/settings_menu.tscn" id="6_p22s0"]
+[ext_resource type="Texture2D" uid="uid://dh1ctmwbob0e" path="res://resources/assets/textures/icons/settings_icon.png" id="7_72sis"]
+[ext_resource type="PackedScene" uid="uid://dfe2owdgeyguu" path="res://scenes/heart_rate_menu/heart_rate_menu.tscn" id="7_j53hn"]
+[ext_resource type="Texture2D" uid="uid://ckqb2ob8q6y27" path="res://resources/assets/textures/icons/clock_icon.png" id="8_hmgkl"]
+[ext_resource type="Texture2D" uid="uid://oqm2sqqfcwuy" path="res://resources/assets/textures/icons/ic_card_icon.png" id="8_n0dae"]
 
 [node name="HomeMenu" type="Control"]
 layout_mode = 3
@@ -106,6 +111,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AgeDisplay" type="VBoxContainer" parent="UserInterface/LeftDisplay/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="UserInterface/LeftDisplay/VBoxContainer/AgeDisplay"]
@@ -121,6 +127,7 @@ text = "50"
 horizontal_alignment = 1
 
 [node name="HeartbeatDisplay" type="VBoxContainer" parent="UserInterface/LeftDisplay/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="UserInterface/LeftDisplay/VBoxContainer/HeartbeatDisplay"]
@@ -146,15 +153,71 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SettingsButton" type="Button" parent="UserInterface/RightDisplay"]
+[node name="WidgetsDisplay" type="HBoxContainer" parent="UserInterface"]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 633.0
-offset_right = 958.0
-offset_bottom = 735.0
-theme = ExtResource("3_5o043")
-text = "Settings"
+offset_left = 20.0
+offset_top = 770.0
+offset_right = 998.0
+offset_bottom = 999.0
+
+[node name="CheckHRButton" type="Control" parent="UserInterface/WidgetsDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/WidgetsDisplay/CheckHRButton"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 522.0
+offset_bottom = 471.0
+scale = Vector2(0.398, 0.413)
+texture_normal = ExtResource("5_l62vd")
+script = ExtResource("5_fr4tf")
+new_scene = ExtResource("7_j53hn")
+
+[node name="SetAlarmButton" type="Control" parent="UserInterface/WidgetsDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/WidgetsDisplay/SetAlarmButton"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 522.0
+offset_bottom = 471.0
+scale = Vector2(0.398, 0.413)
+texture_normal = ExtResource("8_hmgkl")
+script = ExtResource("5_fr4tf")
+new_scene = ExtResource("7_j53hn")
+
+[node name="ShowICButton" type="Control" parent="UserInterface/WidgetsDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/WidgetsDisplay/ShowICButton"]
+layout_mode = 2
+offset_top = -2.0
+offset_right = 512.0
+offset_bottom = 459.0
+scale = Vector2(0.398, 0.413)
+texture_normal = ExtResource("8_n0dae")
+script = ExtResource("5_fr4tf")
+new_scene = ExtResource("7_j53hn")
+
+[node name="SettingsButton" type="Control" parent="UserInterface/WidgetsDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="UserInterface/WidgetsDisplay/SettingsButton"]
+layout_mode = 2
+offset_right = 2048.0
+offset_bottom = 2046.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_72sis")
 script = ExtResource("5_fr4tf")
 new_scene = ExtResource("6_p22s0")
 
-[connection signal="pressed" from="UserInterface/RightDisplay/SettingsButton" to="UserInterface/RightDisplay/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="UserInterface/WidgetsDisplay/CheckHRButton/TextureButton" to="UserInterface/WidgetsDisplay/CheckHRButton/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="UserInterface/WidgetsDisplay/SetAlarmButton/TextureButton" to="UserInterface/WidgetsDisplay/SetAlarmButton/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="UserInterface/WidgetsDisplay/ShowICButton/TextureButton" to="UserInterface/WidgetsDisplay/ShowICButton/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="UserInterface/WidgetsDisplay/SettingsButton/TextureButton" to="UserInterface/WidgetsDisplay/SettingsButton/TextureButton" method="_on_pressed"]
