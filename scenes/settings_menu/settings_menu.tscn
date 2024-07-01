@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjy4yj8i1il7d"]
+[gd_scene load_steps=6 format=3 uid="uid://cjy4yj8i1il7d"]
 
-[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/white_square_background.jpg" id="1_26h4u"]
+[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_i6xhi"]
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="2_lsd27"]
-[ext_resource type="AudioStream" uid="uid://dgmk68881t8fu" path="res://resources/assets/audio/alert ringtones/Simple 1.mp3" id="3_g1kuw"]
 [ext_resource type="Script" path="res://scenes/settings_menu/alert_sound_select.gd" id="3_jjjcd"]
-[ext_resource type="AudioStream" uid="uid://8denv07u6mxj" path="res://resources/assets/audio/alert ringtones/Simple 2.wav" id="4_krim6"]
-[ext_resource type="AudioStream" uid="uid://deuqy4il73yu5" path="res://resources/assets/audio/alert ringtones/Simple 3.wav" id="5_fhiv0"]
-[ext_resource type="Script" path="res://scenes/components/queue_self_button.gd" id="6_ckn40"]
+[ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="3_loouy"]
 [ext_resource type="Script" path="res://scenes/settings_menu/change_theme_dropdown.gd" id="8_sayrl"]
 
 [node name="SettingsMenu" type="Control"]
@@ -14,11 +11,10 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 894.0
 offset_bottom = 894.0
 scale = Vector2(1.17114, 1.17897)
-texture = ExtResource("1_26h4u")
+texture = ExtResource("1_i6xhi")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -49,22 +45,15 @@ text = "Settings"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Back Button" type="Button" parent="UserInterface" node_paths=PackedStringArray("root_node")]
+[node name="Back Button" parent="UserInterface" instance=ExtResource("3_loouy")]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 861.0
-offset_right = 220.0
-offset_bottom = 963.0
-theme = ExtResource("2_lsd27")
-text = "Back"
-script = ExtResource("6_ckn40")
-root_node = NodePath("../..")
 
 [node name="Settings List" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings List"]
+layout_mode = 0
 offset_top = 231.0
 offset_right = 998.0
 offset_bottom = 800.0
@@ -94,15 +83,6 @@ popup/item_1/id = 1
 popup/item_2/text = "Tune 3"
 popup/item_2/id = 2
 script = ExtResource("3_jjjcd")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings List/VBoxContainer/AlertSoundDropdown/OptionButton"]
-stream = ExtResource("3_g1kuw")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Settings List/VBoxContainer/AlertSoundDropdown/OptionButton"]
-stream = ExtResource("4_krim6")
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Settings List/VBoxContainer/AlertSoundDropdown/OptionButton"]
-stream = ExtResource("5_fhiv0")
 
 [node name="FormatDropdown" type="HBoxContainer" parent="Settings List/VBoxContainer"]
 layout_mode = 2
@@ -152,6 +132,5 @@ popup/item_1/id = 1
 script = ExtResource("8_sayrl")
 default_theme = ExtResource("2_lsd27")
 
-[connection signal="pressed" from="UserInterface/Back Button" to="UserInterface/Back Button" method="_on_pressed"]
 [connection signal="item_selected" from="Settings List/VBoxContainer/AlertSoundDropdown/OptionButton" to="Settings List/VBoxContainer/AlertSoundDropdown/OptionButton" method="_on_item_selected"]
 [connection signal="item_selected" from="Settings List/VBoxContainer/ThemeDropdown/OptionButton" to="Settings List/VBoxContainer/ThemeDropdown/OptionButton" method="_on_item_selected"]
