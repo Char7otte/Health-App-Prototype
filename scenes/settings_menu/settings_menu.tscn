@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjy4yj8i1il7d"]
+[gd_scene load_steps=5 format=3 uid="uid://cjy4yj8i1il7d"]
 
-[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_i6xhi"]
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_t7sen"]
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="2_lsd27"]
 [ext_resource type="Script" path="res://scenes/settings_menu/alert_sound_select.gd" id="3_jjjcd"]
 [ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="3_loouy"]
-[ext_resource type="Script" path="res://scenes/settings_menu/change_theme_dropdown.gd" id="8_sayrl"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 894.0
-offset_bottom = 894.0
-scale = Vector2(1.17114, 1.17897)
-texture = ExtResource("1_i6xhi")
+[node name="Background" parent="." instance=ExtResource("1_t7sen")]
+layout_mode = 0
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -45,8 +41,9 @@ text = "Settings"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Back Button" parent="UserInterface" instance=ExtResource("3_loouy")]
+[node name="Back Button" parent="UserInterface" node_paths=PackedStringArray("root_node") instance=ExtResource("3_loouy")]
 layout_mode = 0
+root_node = NodePath("../..")
 
 [node name="Settings List" type="Control" parent="."]
 layout_mode = 3
