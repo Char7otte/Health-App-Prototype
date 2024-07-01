@@ -1,4 +1,4 @@
-extends Button
+extends BaseButton
 
 @export var new_scene: PackedScene
 
