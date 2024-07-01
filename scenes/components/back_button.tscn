@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cut04uj041hbu"]
+
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="1_8oplj"]
+[ext_resource type="Script" path="res://scenes/components/queue_self_button.gd" id="2_eo5kg"]
+
+[node name="Back Button" type="Button" node_paths=PackedStringArray("root_node")]
+offset_left = 18.0
+offset_top = 861.0
+offset_right = 220.0
+offset_bottom = 963.0
+theme = ExtResource("1_8oplj")
+text = "Back"
+script = ExtResource("2_eo5kg")
+root_node = NodePath("")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
