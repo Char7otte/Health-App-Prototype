@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://5vuxm4nyfpq6"]
 
-[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_edj84"]
-[ext_resource type="Texture2D" uid="uid://ch7h2kofah466" path="res://resources/assets/textures/temp/profile_picture.png" id="2_c6c26"]
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_qljrg"]
+[ext_resource type="Texture2D" uid="uid://cch580to0acge" path="res://resources/assets/textures/temp/profile_picture.jpg" id="2_hj38e"]
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="3_5o043"]
 [ext_resource type="Script" path="res://scenes/home_menu/clock.gd" id="4_pla1a"]
 [ext_resource type="Script" path="res://scenes/components/add_scene_button.gd" id="5_fr4tf"]
@@ -18,12 +18,8 @@ anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" parent="." instance=ExtResource("1_qljrg")]
 layout_mode = 0
-offset_right = 894.0
-offset_bottom = 894.0
-scale = Vector2(1.17114, 1.17897)
-texture = ExtResource("1_edj84")
 
 [node name="UserPicture" type="TextureRect" parent="."]
 layout_mode = 0
@@ -32,7 +28,7 @@ offset_top = 288.0
 offset_right = 619.0
 offset_bottom = 663.0
 scale = Vector2(1.29704, 1.20467)
-texture = ExtResource("2_c6c26")
+texture = ExtResource("2_hj38e")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3

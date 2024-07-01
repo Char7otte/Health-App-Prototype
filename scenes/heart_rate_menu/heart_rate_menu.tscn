@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dfe2owdgeyguu"]
 
-[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_nolfr"]
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_a8dtr"]
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="2_xb0nb"]
 [ext_resource type="Texture2D" uid="uid://dd2lxtiquc37a" path="res://resources/assets/textures/icons/arrow_icon.svg" id="3_hf360"]
 [ext_resource type="Script" path="res://scenes/heart_rate_menu/heart_rate_display.gd" id="4_jltbs"]
@@ -128,12 +128,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" parent="." instance=ExtResource("1_a8dtr")]
 layout_mode = 0
-offset_right = 894.0
-offset_bottom = 894.0
-scale = Vector2(1.14652, 1.13848)
-texture = ExtResource("1_nolfr")
 
 [node name="ArrowSprite" type="Sprite2D" parent="."]
 position = Vector2(864, 197)
@@ -175,9 +171,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("4_jltbs")
 
-[node name="Back Button" parent="." instance=ExtResource("5_anlhn")]
+[node name="Back Button" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("5_anlhn")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 202.0
-offset_bottom = 102.0
+scale = Vector2(1.00325, 0.989705)
+root_node = NodePath("..")
