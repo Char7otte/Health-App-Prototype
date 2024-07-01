@@ -1,0 +1,183 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfe2owdgeyguu"]
+
+[ext_resource type="Texture2D" uid="uid://qyic6ssky8ml" path="res://resources/assets/textures/temp/white_square_background.jpg" id="1_nolfr"]
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="2_xb0nb"]
+[ext_resource type="Texture2D" uid="uid://dd2lxtiquc37a" path="res://resources/assets/textures/icons/arrow_icon.svg" id="3_hf360"]
+[ext_resource type="Script" path="res://scenes/heart_rate_menu/heart_rate_display.gd" id="4_jltbs"]
+[ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="5_anlhn"]
+
+[sub_resource type="Animation" id="Animation_3qx02"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContextDisplay:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Place your thumb on the right"]
+}
+
+[sub_resource type="Animation" id="Animation_n6ue8"]
+resource_name = "checking_heart_rate"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197), Vector2(800, 197), Vector2(864, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContextDisplay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeartRateDisplay")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5, 6, 7, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"set_random_heart_rate"
+}, {
+"args": [],
+"method": &"set_random_heart_rate"
+}, {
+"args": [],
+"method": &"set_random_heart_rate"
+}, {
+"args": [],
+"method": &"set_random_heart_rate"
+}, {
+"args": [],
+"method": &"set_random_heart_rate"
+}, {
+"args": [],
+"method": &"set_random_heart_rate"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContextDisplay:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Place your thumb on the top right", "Your heart rate is:"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HeartRateDisplay:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lswip"]
+_data = {
+"RESET": SubResource("Animation_3qx02"),
+"checking_heart_rate": SubResource("Animation_n6ue8")
+}
+
+[node name="HeartRateMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 894.0
+offset_bottom = 894.0
+scale = Vector2(1.14652, 1.13848)
+texture = ExtResource("1_nolfr")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+position = Vector2(864, 197)
+rotation = 3.14159
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("3_hf360")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ArrowSprite"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_lswip")
+}
+autoplay = "checking_heart_rate"
+
+[node name="ContextDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_top = 255.0
+offset_right = 1000.0
+offset_bottom = 962.0
+theme = ExtResource("2_xb0nb")
+theme_override_font_sizes/font_size = 101
+text = "Place your thumb on the right"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HeartRateDisplay" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_top = 488.0
+offset_right = 1000.0
+offset_bottom = 1195.0
+theme = ExtResource("2_xb0nb")
+theme_override_font_sizes/font_size = 286
+text = "xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("4_jltbs")
+
+[node name="Back Button" parent="." instance=ExtResource("5_anlhn")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 202.0
+offset_bottom = 102.0
