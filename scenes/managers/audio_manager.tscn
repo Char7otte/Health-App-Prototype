@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://7rml2atshmon"]
+
+[ext_resource type="AudioStream" uid="uid://dgmk68881t8fu" path="res://resources/assets/audio/alert ringtones/Simple 1.mp3" id="1_1da6y"]
+[ext_resource type="Script" path="res://scenes/managers/audio_manager.gd" id="1_w4jyr"]
+[ext_resource type="AudioStream" uid="uid://8denv07u6mxj" path="res://resources/assets/audio/alert ringtones/Simple 2.wav" id="2_tasx1"]
+[ext_resource type="AudioStream" uid="uid://deuqy4il73yu5" path="res://resources/assets/audio/alert ringtones/Simple 3.wav" id="3_pq2rx"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_w4jyr")
+
+[node name="AlertSounds" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AlertSounds"]
+stream = ExtResource("1_1da6y")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AlertSounds"]
+stream = ExtResource("2_tasx1")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AlertSounds"]
+stream = ExtResource("3_pq2rx")
