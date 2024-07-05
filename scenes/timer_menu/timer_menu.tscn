@@ -20,6 +20,7 @@ layout_mode = 0
 layout_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 187.0
 offset_right = 1000.0
@@ -109,3 +110,458 @@ text = "Set"
 [node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TimeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 305.0
+offset_right = 1000.0
+offset_bottom = 789.0
+
+[node name="Control" type="Control" parent="TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TimeContainer/Control"]
+layout_mode = 2
+offset_right = 203.0
+offset_bottom = 103.0
+theme = ExtResource("3_lrhwk")
+text = "Hour:"
+
+[node name="HoursContainer" type="ScrollContainer" parent="TimeContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimeContainer/HoursContainer"]
+layout_mode = 2
+
+[node name="@Label@35950" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "00"
+
+[node name="@Label@35951" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "01"
+
+[node name="@Label@35952" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "02"
+
+[node name="@Label@35953" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "03"
+
+[node name="@Label@35954" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "04"
+
+[node name="@Label@35955" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "05"
+
+[node name="@Label@35956" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "06"
+
+[node name="@Label@35957" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "07"
+
+[node name="@Label@35958" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "08"
+
+[node name="@Label@35959" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "09"
+
+[node name="@Label@35960" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "10"
+
+[node name="@Label@35961" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "11"
+
+[node name="@Label@35962" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "12"
+
+[node name="@Label@35963" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "13"
+
+[node name="@Label@35964" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "14"
+
+[node name="@Label@35965" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "15"
+
+[node name="@Label@35966" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "16"
+
+[node name="@Label@35967" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "17"
+
+[node name="@Label@35968" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "18"
+
+[node name="@Label@35969" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "19"
+
+[node name="@Label@35970" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "20"
+
+[node name="@Label@35971" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "21"
+
+[node name="@Label@35972" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "22"
+
+[node name="@Label@35973" type="Label" parent="TimeContainer/HoursContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "23"
+
+[node name="Control2" type="Control" parent="TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MinutesContainer" type="ScrollContainer" parent="TimeContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimeContainer/MinutesContainer"]
+layout_mode = 2
+
+[node name="@Label@35974" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "00"
+
+[node name="@Label@35975" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "01"
+
+[node name="@Label@35976" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "02"
+
+[node name="@Label@35977" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "03"
+
+[node name="@Label@35978" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "04"
+
+[node name="@Label@35979" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "05"
+
+[node name="@Label@35980" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "06"
+
+[node name="@Label@35981" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "07"
+
+[node name="@Label@35982" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "08"
+
+[node name="@Label@35983" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "09"
+
+[node name="@Label@35984" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "10"
+
+[node name="@Label@35985" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "11"
+
+[node name="@Label@35986" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "12"
+
+[node name="@Label@35987" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "13"
+
+[node name="@Label@35988" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "14"
+
+[node name="@Label@35989" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "15"
+
+[node name="@Label@35990" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "16"
+
+[node name="@Label@35991" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "17"
+
+[node name="@Label@35992" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "18"
+
+[node name="@Label@35993" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "19"
+
+[node name="@Label@35994" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "20"
+
+[node name="@Label@35995" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "21"
+
+[node name="@Label@35996" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "22"
+
+[node name="@Label@35997" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "23"
+
+[node name="@Label@35998" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "24"
+
+[node name="@Label@35999" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "25"
+
+[node name="@Label@36000" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "26"
+
+[node name="@Label@36001" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "27"
+
+[node name="@Label@36002" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "28"
+
+[node name="@Label@36003" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "29"
+
+[node name="@Label@36004" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "30"
+
+[node name="@Label@36005" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "31"
+
+[node name="@Label@36006" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "32"
+
+[node name="@Label@36007" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "33"
+
+[node name="@Label@36008" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "34"
+
+[node name="@Label@36009" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "35"
+
+[node name="@Label@36010" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "36"
+
+[node name="@Label@36011" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "37"
+
+[node name="@Label@36012" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "38"
+
+[node name="@Label@36013" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "39"
+
+[node name="@Label@36014" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "40"
+
+[node name="@Label@36015" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "41"
+
+[node name="@Label@36016" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "42"
+
+[node name="@Label@36017" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "43"
+
+[node name="@Label@36018" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "44"
+
+[node name="@Label@36019" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "45"
+
+[node name="@Label@36020" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "46"
+
+[node name="@Label@36021" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "47"
+
+[node name="@Label@36022" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "48"
+
+[node name="@Label@36023" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "49"
+
+[node name="@Label@36024" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "50"
+
+[node name="@Label@36025" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "51"
+
+[node name="@Label@36026" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "52"
+
+[node name="@Label@36027" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "53"
+
+[node name="@Label@36028" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "54"
+
+[node name="@Label@36029" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "55"
+
+[node name="@Label@36030" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "56"
+
+[node name="@Label@36031" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "57"
+
+[node name="@Label@36032" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "58"
+
+[node name="@Label@36033" type="Label" parent="TimeContainer/MinutesContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lrhwk")
+text = "59"
