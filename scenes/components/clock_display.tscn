@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmhff5xboba3i"]
+
+[ext_resource type="Script" path="res://scenes/home_menu/clock.gd" id="1_6pkd3"]
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="2_cv8ev"]
+
+[node name="ClockDisplay" type="Label"]
+offset_right = 1000.0
+offset_bottom = 103.0
+theme = ExtResource("2_cv8ev")
+text = "00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_6pkd3")

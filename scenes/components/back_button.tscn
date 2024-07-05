@@ -3,9 +3,9 @@
 [ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="1_8oplj"]
 [ext_resource type="Script" path="res://scenes/components/queue_self_button.gd" id="2_eo5kg"]
 
-[node name="Back Button" type="Button"]
-offset_right = 124.0
-offset_bottom = 77.0
+[node name="BackButton" type="Button"]
+offset_right = 300.0
+offset_bottom = 100.0
 theme = ExtResource("1_8oplj")
 text = "Back"
 script = ExtResource("2_eo5kg")

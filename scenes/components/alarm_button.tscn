@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://baki82oueh4ie"]
+
+[ext_resource type="Texture2D" uid="uid://lp578rruv7yk" path="res://resources/assets/textures/icons/alarm_icon.png" id="1_j4u2j"]
+[ext_resource type="Script" path="res://scenes/components/add_scene_button.gd" id="2_wppjs"]
+[ext_resource type="PackedScene" uid="uid://b0ewbwkqnlyat" path="res://scenes/alarm_screen/alarm_menu.tscn" id="4_id2ah"]
+
+[node name="AlarmButton" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1500.0
+offset_bottom = -488.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_j4u2j")
+script = ExtResource("2_wppjs")
+new_scene = ExtResource("4_id2ah")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
