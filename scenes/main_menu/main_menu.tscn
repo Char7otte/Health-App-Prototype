@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxinmfxb2l363"]
+
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="1_llhy8"]
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="2_g15sn"]
+[ext_resource type="Script" path="res://scenes/components/add_scene_button.gd" id="3_0iq04"]
+[ext_resource type="PackedScene" uid="uid://cmhff5xboba3i" path="res://scenes/components/clock_display.tscn" id="3_wfgf3"]
+[ext_resource type="PackedScene" uid="uid://5vuxm4nyfpq6" path="res://scenes/home_menu/home_menu.tscn" id="4_gwrm2"]
+[ext_resource type="PackedScene" uid="uid://bwnj2obo2i750" path="res://scenes/call_menu/call_menu.tscn" id="5_onybe"]
+[ext_resource type="PackedScene" uid="uid://baki82oueh4ie" path="res://scenes/components/alarm_button.tscn" id="7_06dp6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_llhy8")
+
+[node name="Background" parent="." instance=ExtResource("2_g15sn")]
+layout_mode = 0
+
+[node name="TitleDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 122.0
+offset_right = 1003.0
+offset_bottom = 638.0
+theme = ExtResource("1_llhy8")
+theme_override_font_sizes/font_size = 290
+text = "FITECH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 527.0
+offset_right = 1003.0
+offset_bottom = 957.0
+
+[node name="HomeScreenButton" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HomeScreenButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HomeScreenButton"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+theme = ExtResource("1_llhy8")
+text = "Home screen"
+script = ExtResource("3_0iq04")
+new_scene = ExtResource("4_gwrm2")
+
+[node name="Control2" type="Control" parent="VBoxContainer/HomeScreenButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PhoneButton" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/PhoneButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/PhoneButton"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+theme = ExtResource("1_llhy8")
+text = "Phone call"
+script = ExtResource("3_0iq04")
+new_scene = ExtResource("5_onybe")
+
+[node name="Control2" type="Control" parent="VBoxContainer/PhoneButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClockDisplay" parent="." instance=ExtResource("3_wfgf3")]
+layout_mode = 0
+
+[node name="AlarmButton" parent="." instance=ExtResource("7_06dp6")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="VBoxContainer/HomeScreenButton/Button" to="VBoxContainer/HomeScreenButton/Button" method="_on_pressed"]

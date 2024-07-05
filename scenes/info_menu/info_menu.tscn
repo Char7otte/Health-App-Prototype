@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlrc7t5cbk13r"]
+
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_yolh8"]
+[ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="2_fw2gn"]
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="3_ecxtn"]
+
+[node name="InfoMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_yolh8")]
+layout_mode = 0
+
+[node name="BackButton" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("2_fw2gn")]
+layout_mode = 0
+root_node = NodePath("..")
+
+[node name="InfoDisplay" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 259.0
+offset_right = 1000.0
+offset_bottom = 1000.0
+
+[node name="Control" type="Control" parent="InfoDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameDisplay" type="HBoxContainer" parent="InfoDisplay"]
+layout_mode = 2
+theme = ExtResource("3_ecxtn")
+
+[node name="Label" type="Label" parent="InfoDisplay/NameDisplay"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Control" type="Control" parent="InfoDisplay/NameDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="InfoDisplay/NameDisplay"]
+layout_mode = 2
+text = "Jackson Tan"
+
+[node name="Control2" type="Control" parent="InfoDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddressDisplay" type="HBoxContainer" parent="InfoDisplay"]
+layout_mode = 2
+theme = ExtResource("3_ecxtn")
+
+[node name="Label" type="Label" parent="InfoDisplay/AddressDisplay"]
+layout_mode = 2
+text = "Address:"
+
+[node name="Control" type="Control" parent="InfoDisplay/AddressDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="InfoDisplay/AddressDisplay"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Khatib Ave X Blk 123"
+
+[node name="Control3" type="Control" parent="InfoDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContactDisplay" type="HBoxContainer" parent="InfoDisplay"]
+layout_mode = 2
+theme = ExtResource("3_ecxtn")
+
+[node name="Label" type="Label" parent="InfoDisplay/ContactDisplay"]
+layout_mode = 2
+text = "Contact:"
+
+[node name="Control" type="Control" parent="InfoDisplay/ContactDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="InfoDisplay/ContactDisplay"]
+layout_mode = 2
+text = "1234 9876"

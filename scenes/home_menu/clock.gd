@@ -1,7 +1,4 @@
-extends HBoxContainer
-
-@export var system_time_display_label: Label
+extends Label
 
 func _process(_delta):
-	var system_time = Time.get_time_string_from_system()
-	system_time_display_label.text = system_time
+	text = Time.get_time_string_from_system()

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwnj2obo2i750"]
+
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_1xu1n"]
+[ext_resource type="Texture2D" uid="uid://dxum4qohww2bk" path="res://resources/assets/textures/icons/phone_icon.png" id="2_ekuxh"]
+[ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="3_ktus4"]
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="4_c6vbg"]
+
+[node name="CallMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_1xu1n")]
+layout_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 82.0
+offset_right = 1080.0
+offset_bottom = 1106.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ekuxh")
+
+[node name="Back Button" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("3_ktus4")]
+layout_mode = 0
+root_node = NodePath("..")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 699.0
+offset_right = 1000.0
+offset_bottom = 980.0
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+theme = ExtResource("4_c6vbg")
+text = "Helper"
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+theme = ExtResource("4_c6vbg")
+text = "Ambulance"
+
+[node name="Control3" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
