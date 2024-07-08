@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5vuxm4nyfpq6"]
+[gd_scene load_steps=16 format=3 uid="uid://5vuxm4nyfpq6"]
 
 [ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_qljrg"]
 [ext_resource type="Texture2D" uid="uid://cch580to0acge" path="res://resources/assets/textures/temp/profile_picture.jpg" id="2_hj38e"]
@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dfe2owdgeyguu" path="res://scenes/heart_rate_menu/heart_rate_menu.tscn" id="7_j53hn"]
 [ext_resource type="Texture2D" uid="uid://ckqb2ob8q6y27" path="res://resources/assets/textures/icons/clock_icon.png" id="8_hmgkl"]
 [ext_resource type="Texture2D" uid="uid://oqm2sqqfcwuy" path="res://resources/assets/textures/icons/ic_card_icon.png" id="8_n0dae"]
+[ext_resource type="PackedScene" uid="uid://blnj7kv3aeqtn" path="res://scenes/timer_menu/timer_menu.tscn" id="9_ahyfk"]
 [ext_resource type="PackedScene" uid="uid://dlrc7t5cbk13r" path="res://scenes/info_menu/info_menu.tscn" id="10_1d584"]
 [ext_resource type="PackedScene" uid="uid://baki82oueh4ie" path="res://scenes/components/alarm_button.tscn" id="13_a0wpe"]
+[ext_resource type="Script" path="res://scenes/home_menu/Timer.gd" id="15_3n7lm"]
 
 [node name="HomeMenu" type="Control"]
 layout_mode = 3
@@ -109,7 +111,7 @@ offset_bottom = 471.0
 scale = Vector2(0.398, 0.413)
 texture_normal = ExtResource("8_hmgkl")
 script = ExtResource("5_fr4tf")
-new_scene = ExtResource("7_j53hn")
+new_scene = ExtResource("9_ahyfk")
 
 [node name="InfoButton" type="Control" parent="UserInterface/WidgetsDisplay"]
 layout_mode = 2
@@ -144,7 +146,14 @@ offset_right = 2495.0
 offset_bottom = 512.0
 scale = Vector2(0.4, 0.395894)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+script = ExtResource("15_3n7lm")
+
 [connection signal="pressed" from="UserInterface/WidgetsDisplay/CheckHRButton/TextureButton" to="UserInterface/WidgetsDisplay/CheckHRButton/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="UserInterface/WidgetsDisplay/SetAlarmButton/TextureButton" to="UserInterface/WidgetsDisplay/SetAlarmButton/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="UserInterface/WidgetsDisplay/InfoButton/TextureButton" to="UserInterface/WidgetsDisplay/InfoButton/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="UserInterface/WidgetsDisplay/SettingsButton/TextureButton" to="UserInterface/WidgetsDisplay/SettingsButton/TextureButton" method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

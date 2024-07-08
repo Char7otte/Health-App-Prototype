@@ -18,8 +18,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioManager="*res://scenes/managers/audio_manager.tscn"
+ClockAlarmManager="*res://scenes/managers/clock_alarm_manager.tscn"
 
 [display]
 
 window/size/viewport_width=1000
 window/size/viewport_height=1000
+window/size/initial_position_type=0
+window/size/initial_position=Vector2i(1000, 0)
+window/stretch/mode="viewport"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

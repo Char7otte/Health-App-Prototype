@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://d15pg6dxu7eny"]
+
+[ext_resource type="Theme" uid="uid://b21gjigy5b20w" path="res://resources/Default.tres" id="1_kx5ie"]
+[ext_resource type="PackedScene" uid="uid://bge2dmccaeipj" path="res://scenes/components/background.tscn" id="1_vpjbl"]
+[ext_resource type="Script" path="res://scenes/home_menu/mood_popup.gd" id="2_0hnny"]
+[ext_resource type="PackedScene" uid="uid://cut04uj041hbu" path="res://scenes/components/back_button.tscn" id="4_n2qrl"]
+
+[node name="MoodPopup" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kx5ie")
+script = ExtResource("2_0hnny")
+label = NodePath("VBoxContainer/Label2")
+
+[node name="Background" parent="." instance=ExtResource("1_vpjbl")]
+layout_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 316.0
+offset_right = 1000.0
+offset_bottom = 798.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+text = "Hello! How is your mood today?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Neutral"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 3.0
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" parent="VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("root_node") instance=ExtResource("4_n2qrl")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "Submit"
+root_node = NodePath("../../..")
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

@@ -10,12 +10,11 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_llhy8")
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Background" parent="." instance=ExtResource("2_g15sn")]
 layout_mode = 0
@@ -85,7 +84,8 @@ layout_mode = 0
 
 [node name="AlarmButton" parent="." instance=ExtResource("7_06dp6")]
 layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 6.0
+offset_right = 2491.0
+offset_bottom = 512.0
 
 [connection signal="pressed" from="VBoxContainer/HomeScreenButton/Button" to="VBoxContainer/HomeScreenButton/Button" method="_on_pressed"]
